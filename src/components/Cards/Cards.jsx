@@ -8,13 +8,16 @@ const Cards=({term, handleSelection})=>{
 
 
 
-  return( <div className={styles.container}>
-    <Grid container spacing={3} justify="center" onClick={()=>handleSelection(term)}>
-      <Grid item component={Card} className={styles.card}>
-        <Typography variant="h4">{term.charAt(0).toUpperCase()+term.slice(1)}</Typography>
+  return( 
+    <div className={styles.container}>
+      <Grid container spacing={3} justify="center" onClick={()=>handleSelection(term)}>
+        <Grid item component={Card} className={styles.card}>
+          <Typography variant="h4">{term.charAt(0).toUpperCase()+term.slice(1)}</Typography>
+        </Grid>
       </Grid>
-    </Grid>
-  </div>)
+    </div>
+  )
+
 }
 
 export default Cards

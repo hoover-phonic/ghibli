@@ -9,14 +9,17 @@ import Image from './images/image.png'
 
 class App extends React.Component {
   state = {
-    terms: ['films', 'people', 'locations', 'species', 'vehicles'],
+    terms: ['films', 'people', 'locations'],
     data: [],
+    selectedterm: '',
   }
 
   handleSelection = async (term) => {
     const fetchedData = await fetchdata(term)
 
-    this.setState({ data: fetchedData.data })
+    this.setState({ data: fetchedData.data, selectedterm: term })
+
+    console.log(this.state)
   }
 
   render() {
@@ -30,9 +33,11 @@ class App extends React.Component {
             <Cards key={i} term={term} handleSelection={this.handleSelection} />
           ))}
         </div>
-        {this.state.data.map((item) => (
-          <Items key={item.id} item={item} />
-        ))}
+        <div className={styles.itemContainer}>
+          {this.state.data.map((item) => (
+            <Items key={item.id} item={item} term={this.state.selectedterm} />
+          ))}
+        </div>
       </div>
     )
   }

@@ -5,8 +5,5 @@
 .card {
   margin: 2% 2% !important;
   cursor: pointer;
-}
-
-.films {
-  border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+  border-bottom: 10px solid rgba(162, 81, 238, 0.5);
 }
