@@ -1,0 +1,12 @@
+.container {
+  margin: 3% 3%;
+}
+
+.card {
+  margin: 2% 2% !important;
+  cursor: pointer;
+}
+
+.films {
+  border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+}
